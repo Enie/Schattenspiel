@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		871A76F12983204100284841 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871A76F02983204100284841 /* EditorView.swift */; };
+		874B9B4F2981385C0074778D /* NSImage+CIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874B9B4E2981385C0074778D /* NSImage+CIImage.swift */; };
+		874B9B522981F0390074778D /* CodeEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 874B9B512981F0390074778D /* CodeEditor */; };
 		875BEE73297ECBE500426A14 /* SchattenspielApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEE72297ECBE500426A14 /* SchattenspielApp.swift */; };
 		875BEE75297ECBE500426A14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEE74297ECBE500426A14 /* ContentView.swift */; };
 		875BEE77297ECBE600426A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 875BEE76297ECBE600426A14 /* Assets.xcassets */; };
@@ -14,6 +17,21 @@
 		875BEE85297ECBE700426A14 /* SchattenspielTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEE84297ECBE700426A14 /* SchattenspielTests.swift */; };
 		875BEE8F297ECBE700426A14 /* SchattenspielUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEE8E297ECBE700426A14 /* SchattenspielUITests.swift */; };
 		875BEE91297ECBE700426A14 /* SchattenspielUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEE90297ECBE700426A14 /* SchattenspielUITestsLaunchTests.swift */; };
+		875BEE9E297ECD0300426A14 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEE9D297ECD0300426A14 /* Preview.swift */; };
+		875BEEA0297ECD1000426A14 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEE9F297ECD1000426A14 /* InputView.swift */; };
+		875BEEA2297ECD3F00426A14 /* GPUSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEEA1297ECD3F00426A14 /* GPUSetup.swift */; };
+		875BEEA4297EDEAD00426A14 /* String+regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEEA3297EDEAD00426A14 /* String+regex.swift */; };
+		875BEEA8297EE2B300426A14 /* NSImage+MTLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 875BEEA7297EE2B300426A14 /* NSImage+MTLTexture.m */; };
+		875BEEAA297EFAA700426A14 /* MetalTextureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEEA9297EFAA700426A14 /* MetalTextureView.swift */; };
+		875BEEAC297F07BE00426A14 /* MTLTexture+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEEAB297F07BE00426A14 /* MTLTexture+Identifiable.swift */; };
+		875BEEB3297FFD8800426A14 /* runShader in Resources */ = {isa = PBXBuildFile; fileRef = 875BEEB2297FFD8800426A14 /* runShader */; };
+		875BEEB52980428D00426A14 /* Array+Chunked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875BEEB42980428D00426A14 /* Array+Chunked.swift */; };
+		875D306E29867065002A8D53 /* LabeledTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875D306D29867065002A8D53 /* LabeledTextField.swift */; };
+		87BBC582298A8B9600D80231 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BBC581298A8B9600D80231 /* Project.swift */; };
+		87BBC584298AB50D00D80231 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BBC583298AB50D00D80231 /* CustomTabView.swift */; };
+		87BBC586298AB8F700D80231 /* FileTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BBC585298AB8F700D80231 /* FileTabs.swift */; };
+		87BBC588298AEA1000D80231 /* DirectoryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BBC587298AEA1000D80231 /* DirectoryMonitor.swift */; };
+		87BBC58A298AEA7500D80231 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BBC589298AEA7500D80231 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		871A76F02983204100284841 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		874B9B4E2981385C0074778D /* NSImage+CIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+CIImage.swift"; sourceTree = "<group>"; };
 		875BEE6F297ECBE500426A14 /* Schattenspiel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schattenspiel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		875BEE72297ECBE500426A14 /* SchattenspielApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchattenspielApp.swift; sourceTree = "<group>"; };
 		875BEE74297ECBE500426A14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +65,24 @@
 		875BEE8A297ECBE700426A14 /* SchattenspielUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SchattenspielUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		875BEE8E297ECBE700426A14 /* SchattenspielUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchattenspielUITests.swift; sourceTree = "<group>"; };
 		875BEE90297ECBE700426A14 /* SchattenspielUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchattenspielUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		875BEE9D297ECD0300426A14 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		875BEE9F297ECD1000426A14 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		875BEEA1297ECD3F00426A14 /* GPUSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPUSetup.swift; sourceTree = "<group>"; };
+		875BEEA3297EDEAD00426A14 /* String+regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+regex.swift"; sourceTree = "<group>"; };
+		875BEEA5297EE2B200426A14 /* Schattenspiel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Schattenspiel-Bridging-Header.h"; sourceTree = "<group>"; };
+		875BEEA6297EE2B300426A14 /* NSImage+MTLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+MTLTexture.h"; sourceTree = "<group>"; };
+		875BEEA7297EE2B300426A14 /* NSImage+MTLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+MTLTexture.m"; sourceTree = "<group>"; };
+		875BEEA9297EFAA700426A14 /* MetalTextureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalTextureView.swift; sourceTree = "<group>"; };
+		875BEEAB297F07BE00426A14 /* MTLTexture+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLTexture+Identifiable.swift"; sourceTree = "<group>"; };
+		875BEEAD297F306A00426A14 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		875BEEB2297FFD8800426A14 /* runShader */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = runShader; sourceTree = "<group>"; };
+		875BEEB42980428D00426A14 /* Array+Chunked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Chunked.swift"; sourceTree = "<group>"; };
+		875D306D29867065002A8D53 /* LabeledTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledTextField.swift; sourceTree = "<group>"; };
+		87BBC581298A8B9600D80231 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		87BBC583298AB50D00D80231 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		87BBC585298AB8F700D80231 /* FileTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTabs.swift; sourceTree = "<group>"; };
+		87BBC587298AEA1000D80231 /* DirectoryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectoryMonitor.swift; sourceTree = "<group>"; };
+		87BBC589298AEA7500D80231 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				874B9B522981F0390074778D /* CodeEditor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +134,25 @@
 		875BEE71297ECBE500426A14 /* Schattenspiel */ = {
 			isa = PBXGroup;
 			children = (
+				875BEEA6297EE2B300426A14 /* NSImage+MTLTexture.h */,
+				875BEEA7297EE2B300426A14 /* NSImage+MTLTexture.m */,
 				875BEE72297ECBE500426A14 /* SchattenspielApp.swift */,
-				875BEE74297ECBE500426A14 /* ContentView.swift */,
+				87BBC587298AEA1000D80231 /* DirectoryMonitor.swift */,
+				875BEEA1297ECD3F00426A14 /* GPUSetup.swift */,
+				87BBC589298AEA7500D80231 /* AppState.swift */,
+				87BBC581298A8B9600D80231 /* Project.swift */,
+				87BBC585298AB8F700D80231 /* FileTabs.swift */,
+				875BEEA3297EDEAD00426A14 /* String+regex.swift */,
+				875BEEAB297F07BE00426A14 /* MTLTexture+Identifiable.swift */,
+				875BEEB42980428D00426A14 /* Array+Chunked.swift */,
+				874B9B4E2981385C0074778D /* NSImage+CIImage.swift */,
+				876DC37C2A04E89300A9AFB3 /* Views */,
+				876DC37D2A04E8C200A9AFB3 /* Script */,
 				875BEE76297ECBE600426A14 /* Assets.xcassets */,
 				875BEE7B297ECBE600426A14 /* Schattenspiel.entitlements */,
 				875BEE78297ECBE600426A14 /* Preview Content */,
+				875BEEA5297EE2B200426A14 /* Schattenspiel-Bridging-Header.h */,
+				875BEEB2297FFD8800426A14 /* runShader */,
 			);
 			path = Schattenspiel;
 			sourceTree = "<group>";
@@ -129,6 +182,28 @@
 			path = SchattenspielUITests;
 			sourceTree = "<group>";
 		};
+		876DC37C2A04E89300A9AFB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				875BEE74297ECBE500426A14 /* ContentView.swift */,
+				87BBC583298AB50D00D80231 /* CustomTabView.swift */,
+				871A76F02983204100284841 /* EditorView.swift */,
+				875BEE9F297ECD1000426A14 /* InputView.swift */,
+				875D306D29867065002A8D53 /* LabeledTextField.swift */,
+				875BEEA9297EFAA700426A14 /* MetalTextureView.swift */,
+				875BEE9D297ECD0300426A14 /* Preview.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		876DC37D2A04E8C200A9AFB3 /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				875BEEAD297F306A00426A14 /* main.swift */,
+			);
+			path = Script;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +213,7 @@
 			buildPhases = (
 				875BEE6B297ECBE500426A14 /* Sources */,
 				875BEE6C297ECBE500426A14 /* Frameworks */,
+				875BEEB1297FF08200426A14 /* ShellScript */,
 				875BEE6D297ECBE500426A14 /* Resources */,
 			);
 			buildRules = (
@@ -145,6 +221,9 @@
 			dependencies = (
 			);
 			name = Schattenspiel;
+			packageProductDependencies = (
+				874B9B512981F0390074778D /* CodeEditor */,
+			);
 			productName = Schattenspiel;
 			productReference = 875BEE6F297ECBE500426A14 /* Schattenspiel.app */;
 			productType = "com.apple.product-type.application";
@@ -193,10 +272,11 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					875BEE6E297ECBE500426A14 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					875BEE7F297ECBE700426A14 = {
 						CreatedOnToolsVersion = 14.2;
@@ -217,6 +297,9 @@
 				Base,
 			);
 			mainGroup = 875BEE66297ECBE500426A14;
+			packageReferences = (
+				874B9B502981F0390074778D /* XCRemoteSwiftPackageReference "CodeEditor" */,
+			);
 			productRefGroup = 875BEE70297ECBE500426A14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875BEEB3297FFD8800426A14 /* runShader in Resources */,
 				875BEE7A297ECBE600426A14 /* Preview Assets.xcassets in Resources */,
 				875BEE77297ECBE600426A14 /* Assets.xcassets in Resources */,
 			);
@@ -254,13 +338,52 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		875BEEB1297FF08200426A14 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Schattenspiel/Scripts/main.swift",
+				"$(SRCROOT)/Schattenspiel/String+regex.swift",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/Schattenspiel/runShader",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash  \necho \"This is a shell script\"\nswiftc -O $SCRIPT_INPUT_FILE_0 $SCRIPT_INPUT_FILE_1 -o $SCRIPT_OUTPUT_FILE_0\necho \"I am done running ls\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		875BEE6B297ECBE500426A14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				875BEEAA297EFAA700426A14 /* MetalTextureView.swift in Sources */,
 				875BEE75297ECBE500426A14 /* ContentView.swift in Sources */,
+				87BBC58A298AEA7500D80231 /* AppState.swift in Sources */,
+				875BEEB52980428D00426A14 /* Array+Chunked.swift in Sources */,
+				875BEEA0297ECD1000426A14 /* InputView.swift in Sources */,
+				875BEEA8297EE2B300426A14 /* NSImage+MTLTexture.m in Sources */,
+				875BEEA4297EDEAD00426A14 /* String+regex.swift in Sources */,
+				875BEEA2297ECD3F00426A14 /* GPUSetup.swift in Sources */,
+				87BBC582298A8B9600D80231 /* Project.swift in Sources */,
+				875BEEAC297F07BE00426A14 /* MTLTexture+Identifiable.swift in Sources */,
+				87BBC586298AB8F700D80231 /* FileTabs.swift in Sources */,
+				875BEE9E297ECD0300426A14 /* Preview.swift in Sources */,
+				87BBC584298AB50D00D80231 /* CustomTabView.swift in Sources */,
+				871A76F12983204100284841 /* EditorView.swift in Sources */,
 				875BEE73297ECBE500426A14 /* SchattenspielApp.swift in Sources */,
+				874B9B4F2981385C0074778D /* NSImage+CIImage.swift in Sources */,
+				87BBC588298AEA1000D80231 /* DirectoryMonitor.swift in Sources */,
+				875D306E29867065002A8D53 /* LabeledTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +453,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -390,6 +514,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -415,14 +540,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Schattenspiel/Schattenspiel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Schattenspiel/Preview Content\"";
 				DEVELOPMENT_TEAM = PEZAT5DWHN;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -433,6 +561,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.eniestudio.Schattenspiel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Schattenspiel/Schattenspiel-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -442,10 +572,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Schattenspiel/Schattenspiel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Schattenspiel/Preview Content\"";
 				DEVELOPMENT_TEAM = PEZAT5DWHN;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -460,6 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = de.eniestudio.Schattenspiel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Schattenspiel/Schattenspiel-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -471,6 +604,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = PEZAT5DWHN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -490,6 +624,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = PEZAT5DWHN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -508,6 +643,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = PEZAT5DWHN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -525,6 +661,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = PEZAT5DWHN;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -576,6 +713,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		874B9B502981F0390074778D /* XCRemoteSwiftPackageReference "CodeEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ZeeZide/CodeEditor.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		874B9B512981F0390074778D /* CodeEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 874B9B502981F0390074778D /* XCRemoteSwiftPackageReference "CodeEditor" */;
+			productName = CodeEditor;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 875BEE67297ECBE500426A14 /* Project object */;
 }
