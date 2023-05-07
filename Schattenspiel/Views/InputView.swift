@@ -153,5 +153,6 @@ struct InputView_Previews: PreviewProvider {
     static var previews: some View {
         InputView()
             .environmentObject(GPUSetup())
+            .environmentObject(AppState())
     }
 }
