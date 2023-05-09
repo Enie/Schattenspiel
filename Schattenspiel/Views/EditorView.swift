@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct EditorView: View {
-    @State private var setup = GPUSetup()
-    
-    @State private var dragStart:CGSize?
-    @State private var offset = CGSize.zero
-    
+    @StateObject private var setup = GPUSetup()
     @ObservedObject private var currentProject: Project
     
     var projectName: String
@@ -23,27 +19,15 @@ struct EditorView: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
+        print(setup.width, setup.height)
+        return GeometryReader { geometry in
             ZStack(alignment: .topTrailing) {
                 InputView()
                     Preview()
-                    .frame(width: 256, height: 256*(CGFloat(setup.height)/CGFloat(setup.width)))
+                        .frame(width: CGFloat(setup.width), height: CGFloat(setup.height))
                         .background(.gray.opacity(0.2))
-                        .cornerRadius(8)
-                        .offset(offset)
-                        .gesture(
-                            DragGesture()
-                                .onChanged { gesture in
-                                    if dragStart == nil{
-                                        dragStart = offset
-                                    }
-                                    offset = CGSize(width:min(24, max(-geometry.size.width + 256 - 24, gesture.translation.width + dragStart!.width)),
-                                                    height:max(-24, min(geometry.size.height - 256 + 24, gesture.translation.height + dragStart!.height)))
-                                }
-                                .onEnded { _ in
-                                    dragStart = nil
-                                }
-                        )
+                        .cornerRadius(4)
+                        .draggable()
             }
             .environmentObject(setup)
             .navigationTitle(projectName)
@@ -54,5 +38,6 @@ struct EditorView: View {
 struct EditorView_Previews: PreviewProvider {
     static var previews: some View {
         EditorView(projectName: "Preview")
+            .environmentObject(AppState())
     }
 }

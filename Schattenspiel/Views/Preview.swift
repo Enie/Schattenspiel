@@ -18,7 +18,6 @@ struct Preview: View {
                 .resizable()
                 .scaledToFit()
                 .aspectRatio(contentMode: .fit)
-                .padding(8)
         } else {
             Text("No Output")
         }
