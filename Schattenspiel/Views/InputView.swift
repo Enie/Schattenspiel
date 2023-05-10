@@ -15,10 +15,13 @@ struct InputView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            CodeEditor(source: $state.currentCode, language: .cpp, theme: .ocean)
-                .onChange(of: $state.currentCode.wrappedValue) { newValue in
-                    setup.code = newValue
-                }
+            VSplitView {
+                CodeEditor(source: $state.currentCode, language: .cpp, theme: .ocean)
+                    .onChange(of: $state.currentCode.wrappedValue) { newValue in
+                        setup.code = newValue
+                    }
+                CompileErrorView()
+            }
             Divider()
                 .padding(0)
                 .foregroundColor(.black)
@@ -29,7 +32,7 @@ struct InputView: View {
                     Spacer()
                 }
                     .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 0))
-                VStack(spacing: 0) {
+                WrapperView {
                     HStack {
                         Text("Width")
                         Spacer()
@@ -50,65 +53,10 @@ struct InputView: View {
                     }
                 }
                     .padding(8)
-                    .background(.white.opacity(0.03))
-                    .background {
-                        RoundedRectangle(cornerSize: CGSize(width: 8, height: 8))
-                            .stroke(.white.opacity(0.1), lineWidth: 2)
-                            
-                    }
-                    .cornerRadius(8)
-                    .padding(8)
-                    
-                HStack {
-                    Text("Input Textures")
-                        .fontWeight(.bold)
-                    Spacer()
-                    Text(setup.textureUrls.count == 0 ? "No textures selected yet" : "count: \(setup.textureUrls.count)")
-                    Button {
-                        let openPanel = NSOpenPanel()
-                        openPanel.allowedContentTypes = [.image]
-                        openPanel.allowsMultipleSelection = true
-                        
-                        if openPanel.runModal() == .OK {
-                            openPanel.urls.forEach { url in
-                                setup.textureUrls.append(url)
-                                state.currentProject?.addTexture(url: url)
-                            }
-                        }
-                    } label: {
-                        Image(systemName: "plus.circle")
-                    }
-                    .buttonStyle(.borderless)
-                    .padding(2)
-                    .help("Select input texture")
-                }
+                ImageSelectionView()
                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
-            
-                ScrollView(.horizontal) {
-                    HStack(spacing: 8) {
-                        ForEach(setup.textureUrls, id: \.self) { url in
-                            ZStack(alignment: .topTrailing) {
-                                Image(nsImage: NSImage(byReferencing: url))
-                                    .interpolation(.none)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 200, height: 160)
-                                    .shadow(radius: 2)
-                                    .padding(16)
-                                Button {
-                                    setup.textureUrls.remove(at: setup.textureUrls.firstIndex(of: url)!)
-                                    state.currentProject?.removeTexture(at: state.currentProject!.textures.firstIndex(of: url)!)
-                                } label: {
-                                    Image(systemName: "minus.circle")
-                                }
-                                .buttonStyle(.borderless)
-                                .offset(CGSize(width: -16, height: 4))
-                            }
-                        }
-                    }
+                ImageListView()
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-                }
             }
         }
         .toolbar {

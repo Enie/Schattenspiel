@@ -40,7 +40,6 @@ class Project: ObservableObject, CustomStringConvertible {
         self.textures = []
 
         let projectDirectory = Project.projectsFolder.appendingPathComponent(self.name)
-        //print("––––––––––",Project.projectsFolder)
         
         // check if project already exists
         if let projectContent = try? FileManager.default.contentsOfDirectory(at: projectDirectory, includingPropertiesForKeys: nil, options: [.skipsHiddenFiles])

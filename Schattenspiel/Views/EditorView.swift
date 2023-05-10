@@ -19,7 +19,6 @@ struct EditorView: View {
     }
     
     var body: some View {
-        print(setup.width, setup.height)
         return GeometryReader { geometry in
             ZStack(alignment: .topTrailing) {
                 InputView()

@@ -14,6 +14,8 @@ class GPUSetup: ObservableObject {
     @Published var width = 256 { didSet { try? onChange() }}
     @Published var height = 256 { didSet { try? onChange() }}
     
+    @Published var error: String?
+    
     var code: String = "" { didSet { do {try onChange()} catch {print("meh")} }}
     var textureUrls: [URL] = [] { didSet {
         objectWillChange.send()
@@ -137,6 +139,9 @@ class GPUSetup: ObservableObject {
                     if shaderRanSuccessful {
                         self.output = self.runShader()
                         self.objectWillChange.send()
+                        self.error = nil
+                    } else {
+                        self.error = string.components(separatedBy: "–––––\n").last
                     }
                     group.leave()
                 }

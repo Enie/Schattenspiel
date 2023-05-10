@@ -12,17 +12,33 @@ func runShader(code: String, width: Int, height: Int, textureUrls: [URL]) -> MTL
     outputTextureDescriptor.usage = [.shaderRead, .shaderWrite]
     outputTextureDescriptor.width = width
     outputTextureDescriptor.height = height
+
+    guard let device = MTLCreateSystemDefaultDevice()
+    else {
+        print("–––––")
+        print("Metal device not available")
+        return nil
+    }
     
-    guard let device = MTLCreateSystemDefaultDevice(),
+    var library: MTLLibrary?
+    do {
+        library = try device.makeLibrary(source: code, options: nil)
+    } catch let error {
+        print("–––––")
+        print("\(error.localizedDescription)")
+        return nil
+    }
+
+    guard let lib = library,
           let queue = device.makeCommandQueue(),
           let buffer = queue.makeCommandBuffer(),
-          let library = try? device.makeLibrary(source: code, options: nil),
           let functionName = result.first,
-          let function = library.makeFunction(name: functionName),
+          let function = lib.makeFunction(name: functionName),
           let s = try? device.makeComputePipelineState(function: function),
           let encoder = buffer.makeComputeCommandEncoder(),
           let o = device.makeTexture(descriptor: outputTextureDescriptor)
     else {
+        print("Schattenspiel Shader Compiler ran into an unknown error.")
         return nil
     }
     
@@ -69,6 +85,4 @@ let textureUrls = CommandLine.arguments.first { $0.contains("--textureUrls=") }?
 
 if let output = runShader(code: code, width: width, height: height, textureUrls: textureUrls) {
     print("success")
-} else {
-    print("error")
 }
