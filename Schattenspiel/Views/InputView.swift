@@ -12,7 +12,12 @@ import CodeEditor
 struct InputView: View {
     @EnvironmentObject var setup: GPUSetup
     @EnvironmentObject var state: AppState
-    
+
+    private enum Field: Hashable {
+      case width, height
+    }
+    @FocusState private var focusedField : Field?
+
     @State var textureWidth: Int = 256
     @State var textureHeight: Int = 256
     
@@ -43,9 +48,7 @@ struct InputView: View {
                             .onSubmit {
                                 setup.width = textureWidth
                             }
-                            .focusable { isFocused in
-                                setup.width = textureWidth
-                            }
+                            .focused($focusedField, equals: .width)
                             .textFieldStyle(PlainTextFieldStyle())
                             .multilineTextAlignment(.trailing)
                         Text("px")
@@ -59,9 +62,7 @@ struct InputView: View {
                             .onSubmit {
                                 setup.height = textureHeight
                             }
-                            .focusable { isFocused in
-                                setup.height = textureHeight
-                            }
+                            .focused($focusedField, equals: .height)
                             .textFieldStyle(PlainTextFieldStyle())
                             .multilineTextAlignment(.trailing)
                         Text("px")
@@ -72,6 +73,14 @@ struct InputView: View {
                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 ImageListView()
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
+            }
+            .onChange(of: focusedField) { newValue in
+                if newValue == .height || newValue == .none {
+                    setup.width = textureWidth
+                }
+                if newValue == .width || newValue == .none {
+                    setup.height = textureHeight
+                }
             }
         }
         .toolbar {
