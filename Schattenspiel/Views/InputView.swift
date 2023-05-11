@@ -13,6 +13,9 @@ struct InputView: View {
     @EnvironmentObject var setup: GPUSetup
     @EnvironmentObject var state: AppState
     
+    @State var textureWidth: Int = 256
+    @State var textureHeight: Int = 256
+    
     var body: some View {
         VStack(spacing: 0) {
             VSplitView {
@@ -36,7 +39,13 @@ struct InputView: View {
                     HStack {
                         Text("Width")
                         Spacer()
-                        TextField("Width", value: $setup.width, format: IntegerFormatStyle())
+                        TextField("Width", value: $textureWidth, format: IntegerFormatStyle())
+                            .onSubmit {
+                                setup.width = textureWidth
+                            }
+                            .focusable { isFocused in
+                                setup.width = textureWidth
+                            }
                             .textFieldStyle(PlainTextFieldStyle())
                             .multilineTextAlignment(.trailing)
                         Text("px")
@@ -46,7 +55,13 @@ struct InputView: View {
                     HStack {
                         Text("Height")
                         Spacer()
-                        TextField("Height", value: $setup.height, format: IntegerFormatStyle())
+                        TextField("Height", value: $textureHeight, format: IntegerFormatStyle())
+                            .onSubmit {
+                                setup.height = textureHeight
+                            }
+                            .focusable { isFocused in
+                                setup.height = textureHeight
+                            }
                             .textFieldStyle(PlainTextFieldStyle())
                             .multilineTextAlignment(.trailing)
                         Text("px")
@@ -89,6 +104,9 @@ struct InputView: View {
         .onAppear {
             setup.code = state.currentCode
             setup.textureUrls = state.currentProject?.textures ?? []
+            
+            textureWidth = setup.width
+            textureHeight = setup.height
         }
         .onChange(of: state.currentProject?.name) { projectName in
             setup.code = state.currentCode
