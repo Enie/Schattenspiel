@@ -133,6 +133,7 @@
 				875BEE8D297ECBE700426A14 /* SchattenspielUITests */,
 				875BEE70297ECBE500426A14 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
 		};
 		875BEE70297ECBE500426A14 /* Products */ = {
