@@ -1,4 +1,4 @@
-# Schattenspiel (very very eraly access)
+# Schattenspiel (very very early access)
 
 This is a shader toy for Metal Shader Library Kernels.
 
