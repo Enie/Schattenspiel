@@ -10,22 +10,24 @@ import MetalKit
 import CodeEditor
 
 struct InputView: View {
-    @EnvironmentObject var setup: GPUSetup
-    @EnvironmentObject var state: AppState
+    @EnvironmentObject private var setup: GPUSetup
+    @EnvironmentObject private var state: AppState
 
-    private enum Field: Hashable {
-      case width, height
+    private enum Field: String {
+        case width, height
+        var title: String { rawValue.capitalized }
     }
     @FocusState private var focusedField : Field?
 
-    @State var textureWidth: Int = 256
-    @State var textureHeight: Int = 256
+    @State private var textureWidth  = 256
+    @State private var textureHeight = 256
     
     var body: some View {
         VStack(spacing: 0) {
             VSplitView {
                 CodeEditor(source: $state.currentCode, language: .cpp, theme: .ocean)
                     .onChange(of: $state.currentCode.wrappedValue) { newValue in
+                        // hh: This should probably have a debounced assignment
                         setup.code = newValue
                     }
                 CompileErrorView()
@@ -39,36 +41,19 @@ struct InputView: View {
                         .fontWeight(.bold)
                     Spacer()
                 }
-                    .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 0))
+                .padding(EdgeInsets(top: 8, leading: 16, bottom: 0, trailing: 0))
+                
                 WrapperView {
-                    HStack {
-                        Text("Width")
-                        Spacer()
-                        TextField("Width", value: $textureWidth, format: IntegerFormatStyle())
-                            .onSubmit {
-                                setup.width = textureWidth
-                            }
-                            .focused($focusedField, equals: .width)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .multilineTextAlignment(.trailing)
-                        Text("px")
-                    }
+                    pixelField(field: .width, value: $setup.width,
+                               editingState: $textureWidth)
                     Divider()
                         .padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-                    HStack {
-                        Text("Height")
-                        Spacer()
-                        TextField("Height", value: $textureHeight, format: IntegerFormatStyle())
-                            .onSubmit {
-                                setup.height = textureHeight
-                            }
-                            .focused($focusedField, equals: .height)
-                            .textFieldStyle(PlainTextFieldStyle())
-                            .multilineTextAlignment(.trailing)
-                        Text("px")
-                    }
+                    pixelField(field: .height, value: $setup.height,
+                               editingState: $textureHeight)
                 }
-                    .padding(8)
+                .padding(8)
+                .textFieldStyle(PlainTextFieldStyle())
+                
                 ImageSelectionView()
                     .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 ImageListView()
@@ -84,31 +69,7 @@ struct InputView: View {
             }
         }
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                if let project = state.currentProject {
-                    FileTabs(files: project.sourceFiles) { file in
-                        state.currentFile = file
-                    }
-                }
-            }
-            ToolbarItem {
-                Spacer()
-            }
-            ToolbarItem {
-                ProgressView()
-                    .scaleEffect(CGSize(width: 0.5, height: 0.5))
-                    .opacity(setup.isComputing ? 1 : 0)
-            }
-            ToolbarItem {
-                Button {
-                    setup.isActive.toggle()
-                    try? setup.onChange()
-                } label: {
-                    setup.isActive
-                    ? Image(systemName: "stop.fill")
-                    : Image(systemName: "play.fill")
-                }
-            }
+            inputToolbar
         }
         .onAppear {
             setup.code = state.currentCode
@@ -120,6 +81,52 @@ struct InputView: View {
         .onChange(of: state.currentProject?.name) { projectName in
             setup.code = state.currentCode
             setup.textureUrls = state.currentProject?.textures ?? []
+        }
+    }
+    
+    @ViewBuilder private func pixelField(
+        field: Field,
+        value: Binding<Int>,
+        editingState: Binding<Int>
+    ) -> some View {
+        HStack {
+            Text(field.title)
+            Spacer()
+            TextField(field.title, value: editingState, format: IntegerFormatStyle())
+                .onSubmit {
+                    value.wrappedValue = editingState.wrappedValue
+                }
+                .focused($focusedField, equals: field)
+                .multilineTextAlignment(.trailing)
+            Text("px")
+        }
+    }
+    
+    @ToolbarContentBuilder private var inputToolbar: some ToolbarContent {
+        ToolbarItem(placement: .principal) {
+            if let project = state.currentProject {
+                FileTabs(files: project.sourceFiles) { file in
+                    state.currentFile = file
+                }
+            }
+        }
+        ToolbarItem {
+            Spacer()
+        }
+        ToolbarItem {
+            ProgressView()
+                .scaleEffect(CGSize(width: 0.5, height: 0.5))
+                .opacity(setup.isComputing ? 1 : 0)
+        }
+        ToolbarItem {
+            Button {
+                setup.isActive.toggle()
+                try? setup.onChange()
+            } label: {
+                setup.isActive
+                ? Image(systemName: "stop.fill")
+                : Image(systemName: "play.fill")
+            }
         }
     }
 }
