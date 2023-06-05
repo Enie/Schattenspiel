@@ -83,6 +83,6 @@ let textureUrls = CommandLine.arguments.first { $0.contains("--textureUrls=") }?
     .components(separatedBy: ",")
     .map { URL(filePath: $0) } ?? []
 
-if let output = runShader(code: code, width: width, height: height, textureUrls: textureUrls) {
+if let _ = runShader(code: code, width: width, height: height, textureUrls: textureUrls) {
     print("success")
 }

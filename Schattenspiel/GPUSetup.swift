@@ -72,7 +72,6 @@ class GPUSetup: ObservableObject {
         let w = s.threadExecutionWidth
         let h = s.maxTotalThreadsPerThreadgroup / w
         let gridSize = MTLSizeMake(width, height, 1)
-        let threadsPerThreadgroup = MTLSizeMake(w, h, 1)
         
         encoder.setComputePipelineState(s)
         o.label = "output tex"
