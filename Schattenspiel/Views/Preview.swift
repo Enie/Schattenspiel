@@ -64,11 +64,11 @@ struct Preview: View {
                     VStack {
                         Text("Export Size")
                         WrapperView {
-                            pixelField(field: .width, value: $setup.width,
+                            pixelField(field: .width, value: $exportTextureWidth,
                                        editingState: $exportTextureWidth)
                             Divider()
                                 .padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-                            pixelField(field: .height, value: $setup.height,
+                            pixelField(field: .height, value: $exportTextureHeight,
                                        editingState: $exportTextureHeight)
                         }
                         Button {
